@@ -9,38 +9,21 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #000);
   color: white;
-  background: black;
-  overflow-x: hidden;
 }
 
-/* 🔥 animated background */
-.bg {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 20% 20%, #1d4ed8, transparent),
-              radial-gradient(circle at 80% 80%, #9333ea, transparent),
-              black;
-  animation: moveBg 10s infinite alternate;
-  z-index: -1;
-}
-
-@keyframes moveBg {
-  from { filter: blur(0px); transform: scale(1); }
-  to { filter: blur(20px); transform: scale(1.1); }
-}
-
-/ NAV /
+/* NAV */
 nav {
   position: sticky;
   top: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 15px;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
+  z-index: 100;
 }
 
 nav a {
@@ -56,17 +39,18 @@ nav a:hover {
 / HERO /
 .hero {
   text-align: center;
-  padding: 120px 20px;
+  padding: 100px 20px;
 }
 
 .hero h1 {
-  font-size: 60px;
-  text-shadow: 0 0 20px #38bdf8;
+  font-size: 55px;
+  text-shadow: 0 0 25px #38bdf8;
 }
 
 / SECTION /
 .section {
   padding: 60px 20px;
+  text-align: center;
   max-width: 1000px;
   margin: auto;
 }
@@ -78,36 +62,59 @@ nav a:hover {
   gap: 20px;
 }
 
-/ CARD 3D /
+/ CARD /
 .card {
   background: rgba(255,255,255,0.08);
-  padding: 15px;
   border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
   transition: 0.4s;
-  transform-style: preserve-3d;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
 }
 
 .card:hover {
-  transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+  transform: translateY(-10px);
   box-shadow: 0 0 30px #38bdf8;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 15px;
+/ 🔥 IMAGE ULTRA STYLE */
+.img-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
 }
 
-/ BUTTON /
+.img-wrapper img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 25px;
+  object-fit: cover;
+
+  box-shadow:
+    0 0 25px rgba(56,189,248,0.6),
+    0 0 60px rgba(147,51,234,0.4),
+    0 20px 40px rgba(0,0,0,0.7);
+
+  transition: 0.4s;
+}
+
+.img-wrapper img:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 40px #38bdf8,
+    0 0 90px #9333ea;
+}
+
+/* BUTTON */
 .btn {
   display: inline-block;
-  padding: 10px 15px;
   margin-top: 10px;
+  padding: 10px 15px;
   background: #38bdf8;
   color: black;
   border-radius: 10px;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
   transition: 0.3s;
 }
 
@@ -116,17 +123,8 @@ nav a:hover {
   background: #0ea5e9;
 }
 
-/ REVEAL /
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 1s;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+/ STATUS /
+.open { color: #22c55e; font-weight: bold; }
 
 / FOOTER */
 footer {
@@ -139,47 +137,54 @@ footer {
 
 <body>
 
-<div class="bg"></div>
-
+<!-- NAV -->
 <nav>
   <a href="#artists">Artists</a>
   <a href="#concerts">Concerts</a>
   <a href="#audition">Audition</a>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <h1>ILAB ENTERTAINMENT</h1>
   <p>Next Level Music Experience</p>
 </div>
 
-<div class="section reveal" id="artists">
+<!-- ARTISTS -->
+<div class="section" id="artists">
   <h2>🎤 Artists</h2>
-  <div class="grid">
-    <div class="card">
+
+  <div class="card">
+    <div class="img-wrapper">
       <img src="https://cdn.phototourl.com/free/2026-05-05-300f2ee7-6647-4b32-9027-cfe3231309da.png">
-      <h3>PLOYKRIS</h3>
-      <p>Rising Star</p>
     </div>
+    <h3>PLOYKRIS</h3>
+    <p>Rising Star of ILAB</p>
   </div>
 </div>
 
-<div class="section reveal" id="concerts">
+<!-- CONCERTS -->
+<div class="section" id="concerts">
   <h2>🎫 Concerts</h2>
 
-  <div class="grid">
-    <div class="card">
+  <div class="card">
+    <div class="img-wrapper">
       <img src="https://cdn.phototourl.com/free/2026-05-05-ceb7ad8c-e963-48e6-9503-6c93573fc72d.png">
-      <h3>THE PLOYKRIS CONCERT</h3>
-      <p>9-10 May 2026</p>
-
-      <a class="btn" href="https://forms.gle/ABzPrd4GBBBGkPys9" target="_blank">
-        🎟 BUY TICKET
-      </a>
     </div>
-</div>
+
+    <h3>THE PLOYKRIS CONCERT</h3>
+    <p>9-10 May 2026</p>
+
+    <a class="btn" href="https://forms.gle/ABzPrd4GBBBGkPys9" target="_blank">
+      🎟 BUY TICKET
+    </a>
+
+    <p class="open">🟢 OPEN</p>
+  </div>
 </div>
 
-<div class="section reveal" id="audition">
+<!-- AUDITION -->
+<div class="section" id="audition">
   <h2>🎧 Audition</h2>
 
   <div class="card">
@@ -191,23 +196,10 @@ footer {
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   © ILAB Entertainment
 </footer>
-
-<script>
-// reveal animation
-const items = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", () => {
-  items.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("show");
-    }
-  });
-});
-</script>
 
 </body>
 </html>
