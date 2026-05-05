@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ILAB Entertainment</title>
+</head>
+
+<body style="font-family:sans-serif; background:#111; color:white; margin:0;">
+
+<!-- 🔝 Header -->
+<div style="background:black; padding:20px; text-align:center;">
+  <h1>🎤 ILAB Entertainment</h1>
+  <p>ค่ายดนตรีของเรา</p>
+</div>
+
+<!-- 🎤 ศิลปิน -->
+<div style="padding:20px;">
+  <h2>👤 ศิลปิน</h2>
+
+  <div style="border:1px solid gray; padding:15px; margin-bottom:10px;">
+    <img src="https://cdn.phototourl.com/free/2026-05-05-300f2ee7-6647-4b32-9027-cfe3231309da.png" width="150">
+    <h3>PLOYKRIS พลอยคริส วรันทรศ์ กิจติเจริญ</h3>
+    <p>ศิลปินหญิงเดี่ยวคนแรกของค่ายเรา</p>
+  </div>
+
+</div>
+
+<!-- 🎫 งาน / คอนเสิร์ต -->
+<div style="padding:20px;">
+  <h2>🎫 งาน / คอนเสิร์ต</h2>
+
+  <div style="border:1px solid gray; padding:15px; margin-bottom:10px;">
+    <img src="https://cdn.phototourl.com/free/2026-05-05-ceb7ad8c-e963-48e6-9503-6c93573fc72d.png" width="300">
+    <h3>THE PLOYKRIS CONCERT</h3>
+    <p>9-10 May 2026</p>
+
+    <!-- ปุ่มซื้อตั๋ว -->
+    <a href="https://forms.gle/ABzPrd4GBBBGkPys9" target="_blank">
+      <button style="padding:10px;">🎟 ซื้อตั๋ว</button>
+    </a>
+
+    <!-- สถานะ -->
+    <p style="color:red;">✅ เปิดขาย</p>
+  </div>
+
+</div>
+
+<!-- 🎧 ออดิชั่น -->
+<div style="padding:20px;">
+  <h2>🎧 ออดิชั่น</h2>
+  <p>อยากเป็นศิลปินกับเรา?</p>
+
+  <a href="https://forms.gle/dGGSYwmSu6Qgvw5j8" target="_blank">
+    <button style="padding:10px;">สมัครออดิชั่น</button>
+  </a>
+</div>
+
+  <script>
+let isOpen = true; // 👈 ตอนนี้ "เปิดอยู่"
+
+if (isOpen) {
+  document.getElementById("status").innerHTML = "✅ เปิดรับสมัคร";
+} else {
+  document.getElementById("status").innerHTML = "❌ ปิดรับสมัครแล้ว";
+  document.getElementById("applyLink").style.display = "none";
+}
+</script>
+
+<!-- 🔚 Footer -->
+<div style="background:black; text-align:center; padding:10px;">
+  <p>© ILAB Entertainment</p>
+</div>
+
+</body>
+</html>
