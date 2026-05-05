@@ -2,73 +2,168 @@
 <html>
 <head>
   <title>ILAB Entertainment</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #0f172a, #111827);
+      color: white;
+    }
+
+    /* HEADER */
+    .header {
+      text-align: center;
+      padding: 50px 20px;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 45px;
+    }
+
+    / SECTION /
+    .section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section h2 {
+      border-left: 5px solid #38bdf8;
+      padding-left: 10px;
+    }
+
+    / CARD /
+    .card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 15px;
+      padding: 15px;
+      margin: 15px 0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      border-radius: 10px;
+      max-width: 100%;
+    }
+
+    / BUTTON /
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      margin-top: 10px;
+      background: #38bdf8;
+      color: black;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+      transform: scale(1.05);
+    }
+
+    / STATUS /
+    .open {
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    .closed {
+      color: #ef4444;
+      font-weight: bold;
+    }
+
+    / FOOTER */
+    .footer {
+      text-align: center;
+      padding: 15px;
+      background: black;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 
-<body style="font-family:sans-serif; background:#111; color:white; margin:0;">
+<body>
 
 <!-- 🔝 Header -->
-<div style="background:black; padding:20px; text-align:center;">
+<div class="header">
   <h1>🎤 ILAB Entertainment</h1>
   <p>ค่ายดนตรีของเรา</p>
 </div>
 
 <!-- 🎤 ศิลปิน -->
-<div style="padding:20px;">
+<div class="section">
   <h2>👤 ศิลปิน</h2>
 
-  <div style="border:1px solid gray; padding:15px; margin-bottom:10px;">
-    <img src="https://cdn.phototourl.com/free/2026-05-05-300f2ee7-6647-4b32-9027-cfe3231309da.png" width="150">
+  <div class="card">
+    <img src="https://cdn.phototourl.com/free/2026-05-05-150bafe7-1cbb-4c08-b119-6b8705f2df33.png">
     <h3>PLOYKRIS พลอยคริส วรันทรศ์ กิจติเจริญ</h3>
     <p>ศิลปินหญิงเดี่ยวคนแรกของค่ายเรา</p>
   </div>
-
 </div>
 
-<!-- 🎫 งาน / คอนเสิร์ต -->
-<div style="padding:20px;">
+<!-- 🎫 คอนเสิร์ต -->
+<div class="section">
   <h2>🎫 งาน / คอนเสิร์ต</h2>
 
-  <div style="border:1px solid gray; padding:15px; margin-bottom:10px;">
-    <img src="https://cdn.phototourl.com/free/2026-05-05-ceb7ad8c-e963-48e6-9503-6c93573fc72d.png" width="300">
+  <div class="card">
+    <img src="https://cdn.phototourl.com/free/2026-05-05-ceb7ad8c-e963-48e6-9503-6c93573fc72d.png">
     <h3>THE PLOYKRIS CONCERT</h3>
     <p>9-10 May 2026</p>
 
-    <!-- ปุ่มซื้อตั๋ว -->
-    <a href="https://forms.gle/ABzPrd4GBBBGkPys9" target="_blank">
-      <button style="padding:10px;">🎟 ซื้อตั๋ว</button>
+    <a class="btn" href="https://forms.gle/ABzPrd4GBBBGkPys9" target="_blank">
+      🎟 ซื้อตั๋ว
     </a>
 
-    <!-- สถานะ -->
-    <p style="color:red;">✅ เปิดขาย</p>
+    <p class="open">✅ เปิดขาย</p>
   </div>
-
 </div>
 
 <!-- 🎧 ออดิชั่น -->
-<div style="padding:20px;">
+<div class="section">
   <h2>🎧 ออดิชั่น</h2>
-  <p>อยากเป็นศิลปินกับเรา?</p>
 
-  <a href="https://forms.gle/dGGSYwmSu6Qgvw5j8" target="_blank">
-    <button style="padding:10px;">สมัครออดิชั่น</button>
-  </a>
+  <div class="card">
+    <p>อยากเป็นศิลปินกับเรา?</p>
+
+    <a class="btn" href="https://forms.gle/dGGSYwmSu6Qgvw5j8" target="_blank">
+      สมัครออดิชั่น
+    </a>
+
+    <p id="status"></p>
+  </div>
 </div>
-
-  <script>
-let isOpen = true; // 👈 ตอนนี้ "เปิดอยู่"
-
-if (isOpen) {
-  document.getElementById("status").innerHTML = "✅ เปิดรับสมัคร";
-} else {
-  document.getElementById("status").innerHTML = "❌ ปิดรับสมัครแล้ว";
-  document.getElementById("applyLink").style.display = "none";
-}
-</script>
 
 <!-- 🔚 Footer -->
-<div style="background:black; text-align:center; padding:10px;">
+<div class="footer">
   <p>© ILAB Entertainment</p>
 </div>
+
+<!-- 🧠 Script (แก้บั๊กแล้ว) -->
+<script>
+let isOpen = true;
+
+let status = document.getElementById("status");
+
+if (isOpen) {
+  status.innerHTML = "✅ เปิดรับสมัคร";
+  status.className = "open";
+} else {
+  status.innerHTML = "❌ ปิดรับสมัครแล้ว";
+  status.className = "closed";
+}
+</script>
 
 </body>
 </html>
