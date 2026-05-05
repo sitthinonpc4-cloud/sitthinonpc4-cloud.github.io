@@ -199,9 +199,12 @@ footer {
     
     <p>Join ILAB Entertainment</p>
 
-    <a class="btn" href="https://forms.gle/dGGSYwmSu6Qgvw5j8" target="_blank">
-      APPLY NOW
-    </a>
+<a id="auditionBtn" class="btn" href="https://forms.gle/dGGSYwmSu6Qgvw5j8" target="_blank">
+  APPLY NOW
+</a>
+
+<p id="auditionStatus"></p>
+
   </div>
 </div>
 
@@ -244,5 +247,39 @@ else if (statusState === 2) {
 }
 </script>
 
+    <script>
+let auditionState = 0; // 0=Coming Soon, 1=Open, 2=Closed
+
+const btn = document.getElementById("auditionBtn");
+const status = document.getElementById("auditionStatus");
+
+if (auditionState === 0) {
+  btn.innerHTML = "⏳ COMING SOON";
+  btn.style.pointerEvents = "none";
+  btn.style.opacity = "0.5";
+
+  status.innerHTML = "ยังไม่เปิดรับออดิชั่น";
+  status.style.color = "#fbbf24";
+}
+
+else if (auditionState === 1) {
+  btn.innerHTML = "🎧 APPLY NOW";
+  btn.style.pointerEvents = "auto";
+  btn.style.opacity = "1";
+
+  status.innerHTML = "🟢 เปิดรับสมัคร";
+  status.style.color = "#22c55e";
+}
+
+else if (auditionState === 2) {
+  btn.innerHTML = "❌ CLOSED";
+  btn.style.pointerEvents = "none";
+  btn.style.opacity = "0.5";
+
+  status.innerHTML = "ปิดรับสมัครแล้ว";
+  status.style.color = "#ef4444";
+}
+</script>
+    
 </body>
 </html>
