@@ -209,77 +209,85 @@ footer {
 </div>
 
 <!-- FOOTER -->
-<footer>
+<footer style="background:black; text-align:center; padding:10px; color:white;">
   © ILAB Entertainment
 </footer>
 
-  <script>
+<script>
+/* =========================
+   🎟 TICKET SYSTEM
+========================= */
 let statusState = 0; // 0=Coming Soon, 1=Open, 2=Sold Out
 
-const btn = document.getElementById("ticketBtn");
-const status = document.getElementById("statusText");
+const ticketBtn = document.getElementById("ticketBtn");
+const ticketStatus = document.getElementById("statusText");
 
-if (statusState === 0) {
-  btn.innerHTML = "⏳ COMING SOON";
-  btn.style.pointerEvents = "none";
-  btn.style.opacity = "0.5";
+if (ticketBtn && ticketStatus) {
+  if (statusState === 0) {
+    ticketBtn.innerHTML = "⏳ COMING SOON";
+    ticketBtn.style.pointerEvents = "none";
+    ticketBtn.style.opacity = "0.5";
 
-  status.innerHTML = "ยังไม่เปิดขายบัตร";
-  status.style.color = "#fbbf24";
+    ticketStatus.innerHTML = "ยังไม่เปิดขายบัตร";
+    ticketStatus.style.color = "#fbbf24";
+  }
+
+  else if (statusState === 1) {
+    ticketBtn.innerHTML = "🎟 BUY TICKET";
+    ticketBtn.style.pointerEvents = "auto";
+    ticketBtn.style.opacity = "1";
+
+    ticketStatus.innerHTML = "🟢 เปิดขายแล้ว";
+    ticketStatus.style.color = "#22c55e";
+  }
+
+  else if (statusState === 2) {
+    ticketBtn.innerHTML = "❌ SOLD OUT";
+    ticketBtn.style.pointerEvents = "none";
+    ticketBtn.style.opacity = "0.5";
+
+    ticketStatus.innerHTML = "บัตรขายหมดแล้ว";
+    ticketStatus.style.color = "#ef4444";
+  }
 }
 
-else if (statusState === 1) {
-  btn.innerHTML = "🎟 BUY TICKET";
-  btn.style.pointerEvents = "auto";
-  btn.style.opacity = "1";
-
-  status.innerHTML = "🟢 เปิดขายแล้ว";
-  status.style.color = "#22c55e";
-}
-
-else if (statusState === 2) {
-  btn.innerHTML = "❌ SOLD OUT";
-  btn.style.pointerEvents = "none";
-  btn.style.opacity = "0.5";
-
-  status.innerHTML = "บัตรขายหมดแล้ว";
-  status.style.color = "#ef4444";
-}
-</script>
-
-  <script>
+/* =========================
+   🎧 AUDITION SYSTEM
+========================= */
 let auditionState = 0; // 0=Coming Soon, 1=Open, 2=Closed
 
-const btn = document.getElementById("auditionBtn");
-const status = document.getElementById("auditionStatus");
+const auditionBtn = document.getElementById("auditionBtn");
+const auditionStatus = document.getElementById("auditionStatus");
 
-if (auditionState === 0) {
-  btn.innerHTML = "⏳ COMING SOON";
-  btn.style.pointerEvents = "none";
-  btn.style.opacity = "0.5";
+if (auditionBtn && auditionStatus) {
+  if (auditionState === 0) {
+    auditionBtn.innerHTML = "⏳ COMING SOON";
+    auditionBtn.style.pointerEvents = "none";
+    auditionBtn.style.opacity = "0.5";
 
-  status.innerHTML = "ยังไม่เปิดรับออดิชั่น";
-  status.style.color = "#fbbf24";
-}
+    auditionStatus.innerHTML = "ยังไม่เปิดรับออดิชั่น";
+    auditionStatus.style.color = "#fbbf24";
+  }
 
-else if (auditionState === 1) {
-  btn.innerHTML = "🎧 APPLY NOW";
-  btn.style.pointerEvents = "auto";
-  btn.style.opacity = "1";
+  else if (auditionState === 1) {
+    auditionBtn.innerHTML = "🎧 APPLY NOW";
+    auditionBtn.style.pointerEvents = "auto";
+    auditionBtn.style.opacity = "1";
 
-  status.innerHTML = "🟢 เปิดรับสมัคร";
-  status.style.color = "#22c55e";
-}
+    auditionStatus.innerHTML = "🟢 เปิดรับสมัคร";
+    auditionStatus.style.color = "#22c55e";
+  }
 
-else if (auditionState === 2) {
-  btn.innerHTML = "❌ CLOSED";
-  btn.style.pointerEvents = "none";
-  btn.style.opacity = "0.5";
+  else if (auditionState === 2) {
+    auditionBtn.innerHTML = "❌ CLOSED";
+    auditionBtn.style.pointerEvents = "none";
+    auditionBtn.style.opacity = "0.5";
 
-  status.innerHTML = "ปิดรับสมัครแล้ว";
-  status.style.color = "#ef4444";
+    auditionStatus.innerHTML = "ปิดรับสมัครแล้ว";
+    auditionStatus.style.color = "#ef4444";
+  }
 }
 </script>
-    
+
 </body>
 </html>
