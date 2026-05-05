@@ -174,6 +174,11 @@ footer {
 
     <h3>THE PLOYKRIS CONCERT</h3>
     <p>9-10 May 2026</p>
+    <a id="ticketBtn" class="btn" href="https://forms.gle/ABzPrd4GBBBGkPys9" target="_blank">
+  🎟 BUY TICKET
+</a>
+
+<p id="statusText"></p>
 
     <a class="btn" href="https://forms.gle/ABzPrd4GBBBGkPys9" target="_blank">
       🎟 BUY TICKET
@@ -200,6 +205,40 @@ footer {
 <footer>
   © ILAB Entertainment
 </footer>
+
+  <script>
+let statusState = 0; // 0=Coming Soon, 1=Open, 2=Sold Out
+
+const btn = document.getElementById("ticketBtn");
+const status = document.getElementById("statusText");
+
+if (statusState === 0) {
+  btn.innerHTML = "⏳ COMING SOON";
+  btn.style.pointerEvents = "none";
+  btn.style.opacity = "0.5";
+
+  status.innerHTML = "ยังไม่เปิดขายบัตร";
+  status.style.color = "#fbbf24";
+}
+
+else if (statusState === 1) {
+  btn.innerHTML = "🎟 BUY TICKET";
+  btn.style.pointerEvents = "auto";
+  btn.style.opacity = "1";
+
+  status.innerHTML = "🟢 เปิดขายแล้ว";
+  status.style.color = "#22c55e";
+}
+
+else if (statusState === 2) {
+  btn.innerHTML = "❌ SOLD OUT";
+  btn.style.pointerEvents = "none";
+  btn.style.opacity = "0.5";
+
+  status.innerHTML = "บัตรขายหมดแล้ว";
+  status.style.color = "#ef4444";
+}
+</script>
 
 </body>
 </html>
