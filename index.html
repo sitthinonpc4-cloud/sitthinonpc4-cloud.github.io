@@ -1,169 +1,194 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-  <title>ILAB Entertainment</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ILAB Entertainment</title>
 
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #0f172a, #111827);
-      color: white;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #0f172a);
+  color: white;
+}
 
-    /* HEADER */
-    .header {
-      text-align: center;
-      padding: 50px 20px;
-      background: rgba(0,0,0,0.4);
-      backdrop-filter: blur(10px);
-    }
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  z-index: 100;
+}
 
-    .header h1 {
-      margin: 0;
-      font-size: 45px;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
 
-    / SECTION /
-    .section {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+nav a:hover {
+  background: #38bdf8;
+  color: black;
+}
 
-    .section h2 {
-      border-left: 5px solid #38bdf8;
-      padding-left: 10px;
-    }
+/ HERO /
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
 
-    / CARD /
-    .card {
-      background: rgba(255,255,255,0.08);
-      border-radius: 15px;
-      padding: 15px;
-      margin: 15px 0;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      transition: 0.3s;
-    }
+.hero h1 {
+  font-size: 55px;
+  margin: 0;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+.hero p {
+  opacity: 0.8;
+}
 
-    .card img {
-      border-radius: 10px;
-      max-width: 100%;
-    }
+/ SECTION /
+.section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-    / BUTTON /
-    .btn {
-      display: inline-block;
-      padding: 10px 15px;
-      margin-top: 10px;
-      background: #38bdf8;
-      color: black;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: 0.3s;
-      font-weight: bold;
-    }
+.section h2 {
+  border-left: 5px solid #38bdf8;
+  padding-left: 10px;
+}
 
-    .btn:hover {
-      background: #0ea5e9;
-      transform: scale(1.05);
-    }
+/ GRID /
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
 
-    / STATUS /
-    .open {
-      color: #22c55e;
-      font-weight: bold;
-    }
+/ CARD /
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: 0.3s;
+  backdrop-filter: blur(8px);
+}
 
-    .closed {
-      color: #ef4444;
-      font-weight: bold;
-    }
+.card:hover {
+  transform: translateY(-8px);
+}
 
-    / FOOTER */
-    .footer {
-      text-align: center;
-      padding: 15px;
-      background: black;
-      margin-top: 30px;
-    }
-  </style>
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/ BUTTON /
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #38bdf8;
+  color: black;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
+}
+
+/ STATUS /
+.open { color: #22c55e; font-weight: bold; }
+.closed { color: #ef4444; font-weight: bold; }
+
+/ FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  margin-top: 40px;
+}
+</style>
 </head>
 
 <body>
 
-<!-- 🔝 Header -->
-<div class="header">
+<!-- NAV -->
+<nav>
+  <a href="#artists">Artists</a>
+  <a href="#concerts">Concerts</a>
+  <a href="#audition">Audition</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
   <h1>🎤 ILAB Entertainment</h1>
-  <p>ค่ายดนตรีของเรา</p>
+  <p>Music Label of Rising Stars</p>
 </div>
 
-<!-- 🎤 ศิลปิน -->
-<div class="section">
-  <h2>👤 ศิลปิน</h2>
+<!-- ARTISTS -->
+<div class="section" id="artists">
+  <h2>👤 Artists</h2>
 
-  <div class="card">
-    <img src="https://cdn.phototourl.com/free/2026-05-05-150bafe7-1cbb-4c08-b119-6b8705f2df33.png">
-    <h3>PLOYKRIS พลอยคริส วรันทรศ์ กิจติเจริญ</h3>
-    <p>ศิลปินหญิงเดี่ยวคนแรกของค่ายเรา</p>
+  <div class="grid">
+    <div class="card">
+      <img src="https://cdn.phototourl.com/free/2026-05-05-300f2ee7-6647-4b32-9027-cfe3231309da.png">
+      <h3>PLOYKRIS</h3>
+      <p>ศิลปินหญิงเดี่ยวคนแรกของค่าย</p>
+    </div>
   </div>
 </div>
 
-<!-- 🎫 คอนเสิร์ต -->
-<div class="section">
-  <h2>🎫 งาน / คอนเสิร์ต</h2>
+<!-- CONCERTS -->
+<div class="section" id="concerts">
+  <h2>🎫 Concerts</h2>
 
-  <div class="card">
-    <img src="https://cdn.phototourl.com/free/2026-05-05-ceb7ad8c-e963-48e6-9503-6c93573fc72d.png">
-    <h3>THE PLOYKRIS CONCERT</h3>
-    <p>9-10 May 2026</p>
+  <div class="grid">
+    <div class="card">
+      <img src="https://cdn.phototourl.com/free/2026-05-05-ceb7ad8c-e963-48e6-9503-6c93573fc72d.png">
+      <h3>THE PLOYKRIS CONCERT</h3>
+      <p>9-10 May 2026</p>
 
-    <a class="btn" href="https://forms.gle/ABzPrd4GBBBGkPys9" target="_blank">
-      🎟 ซื้อตั๋ว
-    </a>
+      <a class="btn" href="https://forms.gle/ABzPrd4GBBBGkPys9" target="_blank">
+        🎟 Buy Ticket
+      </a>
 
-    <p class="open">✅ เปิดขาย</p>
+      <p class="open">🟢 OPEN</p>
+    </div>
   </div>
 </div>
 
-<!-- 🎧 ออดิชั่น -->
-<div class="section">
-  <h2>🎧 ออดิชั่น</h2>
+<!-- AUDITION -->
+<div class="section" id="audition">
+  <h2>🎧 Audition</h2>
 
   <div class="card">
-    <p>อยากเป็นศิลปินกับเรา?</p>
+    <p>อยากเป็นศิลปินกับ ILAB ไหม?</p>
 
     <a class="btn" href="https://forms.gle/dGGSYwmSu6Qgvw5j8" target="_blank">
-      สมัครออดิชั่น
+      Apply Now
     </a>
-
-    <p id="status"></p>
   </div>
 </div>
 
-<!-- 🔚 Footer -->
-<div class="footer">
-  <p>© ILAB Entertainment</p>
-</div>
-
-<!-- 🧠 Script (แก้บั๊กแล้ว) -->
-<script>
-let isOpen = true;
-
-let status = document.getElementById("status");
-
-if (isOpen) {
-  status.innerHTML = "✅ เปิดรับสมัคร";
-  status.className = "open";
-} else {
-  status.innerHTML = "❌ ปิดรับสมัครแล้ว";
-  status.className = "closed";
-}
-</script>
+<!-- FOOTER -->
+<footer>
+  © ILAB Entertainment
+</footer>
 
 </body>
 </html>
