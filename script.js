@@ -9,7 +9,7 @@
 3 = Free Entry
 */
 
-let eventState1 = 0;
+let eventState1 = 2;
 
 const ticketBtn1 = document.getElementById("ticketBtn1");
 const eventStatus1 = document.getElementById("eventStatus1");
