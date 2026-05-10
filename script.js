@@ -168,7 +168,7 @@ const products = {
 
     images: [
 
-      "https://kommodo.ai/i/s9lCAXW9x7hrXbS9q1Ss"
+      "https://https://cdn.phototourl.com/free/2026-05-10-fb381552-9709-4522-ba89-07f4bbcd354d.png"
 
     ],
 
