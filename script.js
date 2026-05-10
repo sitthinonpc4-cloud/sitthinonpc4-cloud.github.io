@@ -127,64 +127,166 @@ if (auditionBtn1 && auditionStatus1){
 }
 
 /* =========================
-   SHOP SYSTEM
+   SHOP PRODUCT SYSTEM
 ========================= */
 
-/*
-0 = Coming Soon
-1 = Available
-2 = Sold Out
-3 = Limited Edition
-*/
+const products = {
 
-let shopState1 = 1;
+  1: {
 
-const shopBtn1 = document.getElementById("shopBtn1");
-const shopStatus1 = document.getElementById("shopStatus1");
+    artist: "WESLEY",
 
-if (shopBtn1 && shopStatus1){
+    name: "WESLEY White T-SHIRT V.1",
 
-  if (shopState1 === 0){
+    price: "499 THB",
 
-    shopBtn1.innerHTML = "COMING SOON";
+    desc: "Official white t-shirt of WESLEY V.1",
 
-    shopBtn1.classList.add("soldout-btn");
+    images: [
 
-    shopStatus1.innerHTML = "⏳ Coming Soon";
+      "https://cdn.phototourl.com/free/2026-05-10-c16242ac-4b20-4f6c-9b84-21645118c442.png",
 
-    shopStatus1.className = "coming";
+      "https://cdn.phototourl.com/free/2026-05-10-cf6d271d-5023-4a5f-8c68-6ef22d994472.png"
+
+    ],
+
+    sizes: ["S — Chest 36” / Length 27”","M — Chest 38” / Length 28”","L — Chest 42” / Length 29”","XL — Chest 46” / Length 30”"],
+
+    status: "buy"
+
+  },
+
+  2: {
+
+    artist: "WESLEY",
+
+    name: "WESLEY OFFICIAL LIGHT STICK V.1",
+
+    price: "1500 THB",
+
+    desc: "Product Details: MODEL: WESLY OFFICIAL LIGHT STICK V.1 Colors: 16 colors Lighting modes: steady light, flashing light, and RGB MULTI COLOR System: CENTRAL CONTROL Material: ABS and acrylic Height: 27 cm",
+
+    images: [
+
+      "https://kommodo.ai/i/s9lCAXW9x7hrXbS9q1Ss"
+
+    ],
+
+    sizes: [],
+
+    status: "buy"
+
+  },
+
 
   }
 
-  else if (shopState1 === 1){
+};
 
-    shopBtn1.innerHTML = "BUY NOW";
+/* =========================
+   PRODUCT PAGE SYSTEM
+========================= */
 
-    shopStatus1.innerHTML = "🟢 AVAILABLE";
+// อ่าน id จาก URL
 
-    shopStatus1.className = "open";
+const params = new URLSearchParams(window.location.search);
+
+const id = params.get("id");
+
+// เลือกสินค้า
+const product = products[id];
+
+// ถ้ามีสินค้า
+if(product){
+
+  // ข้อมูลสินค้า
+  document.getElementById("productArtist").innerText =
+  product.artist;
+
+  document.getElementById("productName").innerText =
+  product.name;
+
+  document.getElementById("productPrice").innerText =
+  product.price;
+
+  document.getElementById("productDesc").innerText =
+  product.desc;
+
+  // รูปหลัก
+  document.getElementById("productImage").src =
+  product.images[0];
+
+  // gallery
+  const thumbnails =
+  document.getElementById("productThumbnails");
+
+  product.images.forEach((image) => {
+
+    const img =
+    document.createElement("img");
+
+    img.src = image;
+
+    img.classList.add("thumb");
+
+    img.onclick = () => {
+
+      document.getElementById("productImage").src =
+      image;
+
+    };
+
+    thumbnails.appendChild(img);
+
+  });
+
+  // sizes
+  const sizeSelect =
+  document.getElementById("sizeSelect");
+
+  product.sizes.forEach((size) => {
+
+    const option =
+    document.createElement("option");
+
+    option.value = size;
+
+    option.innerText = size;
+
+    sizeSelect.appendChild(option);
+
+  });
+
+  // button
+  const btn =
+  document.getElementById("productBtn");
+
+  // sold out
+  if(product.status === "soldout"){
+
+    btn.innerText = "SOLD OUT";
+
+    btn.disabled = true;
+
+    btn.classList.add("soldout-btn");
 
   }
 
-  else if (shopState1 === 2){
+  // coming soon
+  else if(product.status === "coming"){
 
-    shopBtn1.innerHTML = "SOLD OUT";
+    btn.innerText = "COMING SOON";
 
-    shopBtn1.classList.add("soldout-btn");
+    btn.disabled = true;
 
-    shopStatus1.innerHTML = "🔴 SOLD OUT";
-
-    shopStatus1.className = "soldout";
+    btn.classList.add("soldout-btn");
 
   }
 
-  else if (shopState1 === 3){
+  // buy
+  else{
 
-    shopBtn1.innerHTML = "LIMITED";
-
-    shopStatus1.innerHTML = "🟣 LIMITED EDITION";
-
-    shopStatus1.className = "limited";
+    btn.innerText = "BUY NOW";
 
   }
 
