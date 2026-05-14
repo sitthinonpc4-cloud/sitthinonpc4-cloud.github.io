@@ -168,11 +168,11 @@ const products = {
 
     images: [
 
-      "https://https://cdn.phototourl.com/free/2026-05-10-fb381552-9709-4522-ba89-07f4bbcd354d.png"
+      "//https://cdn.phototourl.com/free/2026-05-10-fb381552-9709-4522-ba89-07f4bbcd354d.png"
 
     ],
 
-    sizes: [],
+    sizes: ["Height: 27 cm"],
 
     status: "buy"
 
@@ -194,7 +194,7 @@ const products = {
 
     ],
 
-    sizes: [freesize],
+    sizes: ["FREE SIZE"],
 
     status: "buy"
 
@@ -238,7 +238,7 @@ const products = {
 
     ],
 
-    sizes: [],
+    sizes: ["Height: 27 cm"],
 
     status: "buy"
 
@@ -260,7 +260,7 @@ const products = {
 
     ],
 
-    sizes: [],
+    sizes: ["15.5 x 10 cm"],
 
     status: "buy"
 
@@ -282,7 +282,7 @@ const products = {
 
     ],
 
-    sizes: [],
+    sizes: ["Height: 27 cm"],
 
     status: "buy"
 
