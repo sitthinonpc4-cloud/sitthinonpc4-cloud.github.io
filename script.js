@@ -138,7 +138,7 @@ const products = {
 
     name: "WESLEY White T-SHIRT V.1",
 
-    price: "499 THB",
+    price: "350 THB",
 
     desc: "Official white t-shirt of WESLEY V.1",
 
@@ -177,6 +177,139 @@ const products = {
     status: "buy"
 
   },
+
+    3: {
+
+    artist: "OZONE",
+
+    name: "OZONE Hoodie V.1",
+
+    price: "400 THB",
+
+    desc: "Official Hoodie of OZONE V.1",
+
+    images: [
+
+      "https://cdn.phototourl.com/free/2026-05-14-fe2af883-d4bb-44d2-9b76-5c715a51c46c.png"
+
+    ],
+
+    sizes: [freesize],
+
+    status: "buy"
+
+  },
+
+   4: {
+
+    artist: "OZONE",
+
+    name: "OZONE T-SHIRT V.1",
+
+    price: "350 THB",
+
+    desc: "Official t-shirt of OZONE V.1",
+
+    images: [
+
+      "https://cdn.phototourl.com/free/2026-05-14-5d841e07-782f-4a2d-be37-87e2d30c0276.png"
+
+    ],
+
+    sizes: ["S — Chest 36” / Length 27”","M — Chest 38” / Length 28”","L — Chest 42” / Length 29”","XL — Chest 46” / Length 30”"],
+
+    status: "buy"
+
+  },
+
+    5: {
+
+    artist: "OZONE",
+
+    name: "OZONE Cloud Light LIGHT STICK ",
+
+    price: "1500 THB",
+
+    desc: "Product Details: MODEL: OZONE OFFICIAL LIGHT STICK V.1 Colors: 16 colors Lighting modes: steady light, flashing light, and RGB MULTI COLOR System: CENTRAL CONTROL Material: ABS and acrylic Height: 27 cm",
+
+    images: [
+
+      "https://cdn.phototourl.com/free/2026-05-14-99515744-a892-4311-be4a-b3bcf0b38434.png"
+
+    ],
+
+    sizes: [],
+
+    status: "buy"
+
+  },
+
+   6: {
+
+    artist: "OZONE",
+
+    name: "OZONE Snow Mint Tumbler Cold Cup",
+
+    price: "250 THB",
+
+    desc: "OZONE Snow Mint Tumbler Cold Cup ,official merchandise Size: 15.5 x 10 cm",
+
+    images: [
+
+      "https://cdn.phototourl.com/free/2026-05-14-4a6b99ba-870e-4fa4-a231-5d3ef8c75d2a.png"
+
+    ],
+
+    sizes: [],
+
+    status: "buy"
+
+  },
+
+   7: {
+
+    artist: "EMI",
+
+    name: "EMI OFFICIAL LIGHT STICK V.1",
+
+    price: "1500 THB",
+
+    desc: "Product Details: MODEL: EMI OFFICIAL LIGHT STICK V.1 Colors: 16 colors Lighting modes: steady light, flashing light, and RGB MULTI COLOR System: CENTRAL CONTROL Material: ABS and acrylic Height: 27 cm",
+
+    images: [
+
+      "https://cdn.phototourl.com/free/2026-05-14-6ebc955e-c77d-4d2f-8783-4658a39ec770.png"
+
+    ],
+
+    sizes: [],
+
+    status: "buy"
+
+  },
+
+   8: {
+
+    artist: "EMI",
+
+    name: "EMI T-SHIRT V.1",
+
+    price: "350 THB",
+
+    desc: "Official t-shirt of EMI V.1",
+
+    images: [
+
+      "https://cdn.phototourl.com/free/2026-05-14-8d06d54e-2b1a-401b-8aed-fa5d8a6939c2.png"
+
+    ],
+
+    sizes: ["S — Chest 36” / Length 27”","M — Chest 38” / Length 28”","L — Chest 42” / Length 29”","XL — Chest 46” / Length 30”"],
+
+    status: "buy"
+
+  },
+
 
 };
 
